@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div [ngClass]="'friends'">
+  <a routerLink="find" [ngClass]="'friends__link'">Back to Friends</a>
+  <div>
+    <div [ngClass]="'friends__display'">
+      <h2 [ngClass]="'friends__title'">Search</h2>
+      <ul [ngClass]="'friends__list'">
+        <li
+          [ngClass]="'friends__item'"
+          *ngFor="let items of (data$ | async)?.searchedPeople"
+        >
+          <div [ngClass]="'friends__left'">
+            <p [ngClass]="'friends__email'">{{ items.email }}</p>
+          </div>
+          <div [ngClass]="'friends__right'">
+            <button
+              [className]="items.sended ? 'friends__remove' : 'friends__cancel'"
+              #el
+              id="{{ items._id }}"
+              (click)="items.sended ? cancelInvite(el) : sendInvite(el)"
+            >
+              {{ items.sended ? "Cancel invite" : "Send invite" }}
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

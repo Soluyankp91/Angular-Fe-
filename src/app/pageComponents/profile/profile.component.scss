@@ -1,0 +1,56 @@
+.profile {
+  width: 75%;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  box-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024, 0 1px 3px 0 #0000001f;
+  border-radius: 7px;
+  margin-top: 100px;
+  background-color: #fff;
+  &__display,
+  &__edit {
+    width: 50%;
+    padding: 100px 150px;
+    box-sizing: border-box;
+    border-right: 1px solid #686868;
+  }
+  &__header {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  &__input-items {
+    width: 70%;
+  }
+  &__info-item {
+    padding-top: 15px;
+  }
+  &__username-title {
+    color: #b0b0b0;
+    font-size: 14px;
+  }
+  &__username-value {
+    font-size: 20px;
+  }
+  &__input {
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    border: 2px solid #808080;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+  &__edit-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__submit-button {
+    margin-top: 15px;
+    background-color: #673ab7;
+    width: 60%;
+    color: #fff;
+  }
+}

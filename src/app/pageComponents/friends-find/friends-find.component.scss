@@ -1,0 +1,66 @@
+.friends {
+  width: 75%;
+  height: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024, 0 1px 3px 0 #0000001f;
+  border-radius: 7px;
+  margin-top: 100px;
+  background-color: #fff;
+  position: relative;
+  &__display {
+    padding: 100px 150px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &__title {
+    font-size: 30px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+  }
+  &__item {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    justify-content: space-between;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024,
+      0 1px 3px 0 #0000001f;
+    border-radius: 4px;
+  }
+  &__left {
+    padding-left: 15px;
+  }
+  &__right {
+    padding-right: 15px;
+  }
+  &__remove {
+    width: 200px;
+    color: #fff;
+    padding: 10px 30px;
+    background-color: #f08080;
+    &:hover {
+      background-color: #dc143c;
+    }
+  }
+  &__cancel {
+    width: 200px;
+    color: #fff;
+    padding: 10px 30px;
+    background-color: #dc143c;
+    &:hover {
+      background-color: #f08080;
+    }
+  }
+  &__link {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #f08080;
+    padding: 10px 30px;
+    border-radius: 4px;
+    color: #fff;
+    &:hover {
+      background-color: #dc143c;
+    }
+  }
+}

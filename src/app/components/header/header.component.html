@@ -1,0 +1,25 @@
+<header [ngClass]="'header'">
+  <div [ngClass]="'header__left'">
+    <img [ngClass]="'logo'" src="../../../assets/images/logo.svg" />
+    <nav [ngClass]="'header__navigation'">
+      <ul [ngClass]="'header__list'">
+        <li [ngClass]="'header__list-item'">
+          <a routerLink="/login">Games</a>
+        </li>
+        <li [ngClass]="'header__list-item'">
+          <a routerLink="/login">Library</a>
+        </li>
+        <li [ngClass]="'header__list-item'">
+          <a routerLink="/login">Friends</a>
+        </li>
+        <li [ngClass]="'header__list-item'">
+          <a routerLink="/login">Profile</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div [ngClass]="'header__right'">
+    <button [ngClass]="'header__logout'" (click)="Logout()">Logout</button>
+  </div>
+</header>
+<router-outlet></router-outlet>

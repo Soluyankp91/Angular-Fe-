@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div
+  [ngClass]="'profile'"
+  #el
+  (click)="show(el)"
+  *ngIf="user$ | async; let user"
+  id="{{ user.email }}"
+>
+  <div [ngClass]="'profile__display'">
+    <h2 [ngClass]="'profile__header'">Profile Information</h2>
+    <div [ngClass]="'profile__info-items'">
+      <div [ngClass]="'profile__info-item'">
+        <h3 [ngClass]="'profile__username-title'">Username:</h3>
+        <p [ngClass]="'profile__username-value'">{{ user.login }}</p>
+      </div>
+      <div [ngClass]="'profile__info-item'">
+        <h3 [ngClass]="'profile__username-title'">Email:</h3>
+        <p [ngClass]="'profile__username-value'">{{ user.email }}</p>
+      </div>
+      <div [ngClass]="'profile__info-item'">
+        <h3 [ngClass]="'profile__username-title'">Age:</h3>
+        <p [ngClass]="'profile__username-value'">{{ user.age }}</p>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="'profile__edit'">
+    <form [formGroup]="userForm">
+      <h2 [ngClass]="'profile__header'">Edit Profile</h2>
+      <div [ngClass]="'profile__edit-inner'">
+        <div [ngClass]="'profile__input-items'">
+          <div [ngClass]="'profile__info-item'">
+            <h3 [ngClass]="'profile__username-title'">Username:</h3>
+            <input
+              [ngClass]="'profile__input'"
+              type="text"
+              placeholder="Username"
+              formControlName="login"
+            />
+          </div>
+          <div [ngClass]="'profile__info-item'">
+            <h3 [ngClass]="'profile__username-title'">Email:</h3>
+            <input
+              [ngClass]="'profile__input'"
+              type="email"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+          <div [ngClass]="'profile__info-item'">
+            <h3 [ngClass]="'profile__username-title'">Age:</h3>
+            <input
+              [ngClass]="'profile__input'"
+              type="number"
+              placeholder="Age"
+              formControlName="age"
+            />
+          </div>
+        </div>
+        <button
+          [ngClass]="'profile__submit-button'"
+          type="submit"
+          (click)="submit()"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div [ngClass]="'profile__update'"></div>
+</div>

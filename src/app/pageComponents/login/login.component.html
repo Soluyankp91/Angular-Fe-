@@ -1,0 +1,30 @@
+<div [ngClass]="'profile'">
+  <form action="#" [ngClass]="'form sign-in'" [formGroup]="classForm">
+    <h1 [ngClass]="'form__title'">Sign in</h1>
+
+    <div [ngClass]="'form__item'">
+      <label for="checkEmail">Email</label>
+      <input
+        [type]="'Email'"
+        [ngClass]="'form__input box'"
+        [id]="'checkEmail'"
+        placeholder="Email"
+        formControlName="email"
+      />
+    </div>
+    <div [ngClass]="'form__item'">
+      <label for="checkPassword">Password</label>
+      <input
+        [ngClass]="'form__input box'"
+        [id]="'checkPassword'"
+        [type]="'password'"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+    <button (click)="submit()" type="submit" [ngClass]="'form__submit box'">
+      Sign In
+    </button>
+  </form>
+</div>
+<p>{{ token | async }}</p>

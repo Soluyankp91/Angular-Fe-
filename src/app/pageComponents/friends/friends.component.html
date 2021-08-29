@@ -1,0 +1,55 @@
+<app-header></app-header>
+<!-- <div>
+  <p *ngFor="let items of (data$ | async)?.friends">{{ items.email }}</p>
+</div> -->
+<div [ngClass]="'friends'">
+  <a routerLink="find" [ngClass]="'friends__link'">Find Friends</a>
+  <div>
+    <div
+      [ngClass]="'friends__display'"
+      *ngFor="let items of (data$ | async)?.friends"
+    >
+      <h2 [ngClass]="'friends__title'">My Friends</h2>
+      <ul [ngClass]="'friends__list'">
+        <li [ngClass]="'friends__item'">
+          <div [ngClass]="'friends__left'">
+            <p [ngClass]="'friends__email'">{{ items.email }}</p>
+          </div>
+          <div [ngClass]="'friends__right'">
+            <button
+              [ngClass]="'friends__remove'"
+              #el
+              (click)="removeFriend(el)"
+              id="{{ items._id }}"
+            >
+              Remove Friend
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      [ngClass]="'friends__display'"
+      *ngFor="let items of (data$ | async)?.incomingRequests"
+    >
+      <h2 [ngClass]="'friends__title'">Friend requests</h2>
+      <ul [ngClass]="'friends__list'">
+        <li [ngClass]="'friends__item'">
+          <div [ngClass]="'friends__left'">
+            <p [ngClass]="'friends__email'">{{ items.email }}</p>
+          </div>
+          <div [ngClass]="'friends__right'">
+            <button
+              [ngClass]="'friends__remove'"
+              #el
+              (click)="acceptFriend(el)"
+              id="{{ items._id }}"
+            >
+              Accept Request
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
