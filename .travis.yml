@@ -12,7 +12,7 @@ branches:
 
 
  deploy:
-   provider:heroku
-   app:Steam
-   api_key:
+  provider:heroku
+  app:angularsoluyan
+  api_key:
      secure:f4bc3b41-cc88-4670-bcb8-fb391b2a703a
