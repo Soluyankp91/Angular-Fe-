@@ -12,16 +12,17 @@ const { GameRouter } = require("./routes/gameRouter");
 const http_errors = require("http-errors");
 // const ew=require("../src/index.html");
 const path = require("path");
-
+let str=__dirname.replace("\\Back","");
+let str_2=__dirname.replace("\\src\\Back","")
 const app = express();
 app.use(morgan("common"));
 app.use(express.json());
 app.use(cors());
-app.use(express.static(__dirname+'../../Steam'))
+console.log(str_2)
+app.use(express.static(str_2));
 app.get('/',function(req,res){
-    let str=__dirname.replace("\\BackEnd","");
     console.log(path.join(str+"/src/index.html"))
-     res.status(200).sendFile(path.join(str+"/src/index.html"))
+     res.status(200).sendFile(path.join(str+"/index.html"))
 });
 app.use("/api/", AuthRouter);
 app.use("/api/user/me", UserRouter);
