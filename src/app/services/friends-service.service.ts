@@ -24,7 +24,7 @@ export class FriendsServiceService extends DataStorage {
     return this.getState$().pipe(
       map((data) => {
         if (!data) {
-          return data;
+          return data; //filter
         }
         let { friends, incomingRequests } = data;
         return {

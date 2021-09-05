@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div [ngClass]="'friends'">
-  <a routerLink="find" [ngClass]="'friends__link'">Back to Friends</a>
+  <a routerLink="/friends" [ngClass]="'friends__link'">Back to Friends</a>
   <div>
     <div [ngClass]="'friends__display'">
       <h2 [ngClass]="'friends__title'">Search</h2>
@@ -27,3 +27,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

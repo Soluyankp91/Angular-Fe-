@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
     let newUser = this.userForm.value;
     try {
       this.userService.editUser(newUser);
-    } catch (err) {
+    } catch (err: any) {
       alert(err.message);
     }
   }

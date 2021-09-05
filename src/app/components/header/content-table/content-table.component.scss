@@ -1,0 +1,130 @@
+.library {
+  width: 80%;
+  height: fit-content;
+  margin: 0 auto;
+  box-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024, 0 1px 3px 0 #0000001f;
+  border-radius: 7px;
+  margin-top: 100px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 68px 100px;
+  &__title {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  &__item {
+    border-radius: 5px;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px 0 #00000024,
+      0 1px 3px 0 #0000001f;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  &__item-title {
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__item-top {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0% 50% 35% 0%;
+    background-color: lightpink;
+    position: relative;
+  }
+  &__item-bottom {
+    flex-grow: 0;
+    padding: 16px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__item-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__item-download,
+  &__item-share {
+    font-size: 14px;
+    padding: 10px 15px;
+    background-color: purple;
+    width: 45%;
+    text-align: center;
+    color: #fff;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    flex-grow: 1;
+    grid-auto-rows: 1fr;
+    grid-gap: 30px;
+  }
+  &__item-add-to-library {
+    font-size: 14px;
+    padding: 12px 0;
+    background-color: purple;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 100%;
+  }
+  &__search-functions {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__search-submit {
+    padding: 8px 20px;
+    background-color: purple;
+  }
+  &__search-input {
+    border: 1px solid #00000024;
+    border-radius: 5px;
+    width: 90%;
+    padding-left: 10px;
+  }
+  &__search-input::placeholder {
+    color: grey;
+    font-size: 15px;
+  }
+  &__search-input:focus {
+    outline-width: 0;
+  }
+  &__search-title {
+    padding: 5px 0;
+    font-size: 18px;
+  }
+  &__search {
+    margin-bottom: 10px;
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__filter {
+    border-left: 1px solid #000;
+    padding-left: 10px;
+  }
+  &__filter-tag-item {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  &__filter-tag-item-input {
+  }
+  &__filter-tag-item-label {
+    padding-left: 10px;
+  }
+}

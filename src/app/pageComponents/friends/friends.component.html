@@ -7,11 +7,10 @@
   <div>
     <div
       [ngClass]="'friends__display'"
-      *ngFor="let items of (data$ | async)?.friends"
     >
       <h2 [ngClass]="'friends__title'">My Friends</h2>
       <ul [ngClass]="'friends__list'">
-        <li [ngClass]="'friends__item'">
+        <li [ngClass]="'friends__item'" *ngFor="let items of (data$ | async)?.friends"> 
           <div [ngClass]="'friends__left'">
             <p [ngClass]="'friends__email'">{{ items.email }}</p>
           </div>
@@ -30,11 +29,10 @@
     </div>
     <div
       [ngClass]="'friends__display'"
-      *ngFor="let items of (data$ | async)?.incomingRequests"
     >
       <h2 [ngClass]="'friends__title'">Friend requests</h2>
       <ul [ngClass]="'friends__list'">
-        <li [ngClass]="'friends__item'">
+        <li [ngClass]="'friends__item'" *ngFor="let items of (data$ | async)?.incomingRequests">
           <div [ngClass]="'friends__left'">
             <p [ngClass]="'friends__email'">{{ items.email }}</p>
           </div>

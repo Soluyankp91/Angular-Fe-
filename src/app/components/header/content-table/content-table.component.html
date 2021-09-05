@@ -1,0 +1,140 @@
+<form>
+  <div [ngClass]="'library'" [formGroup]="userForm">
+    <div [ngClass]="'library__container'">
+      <div [ngClass]="'library__search'" *ngIf="gamesModeOn">
+        <h2 [ngClass]="'library__search-title'">Search</h2>
+        <div [ngClass]="'library__search-functions'">
+          <input
+            formControlName="search"
+            type="text"
+            [ngClass]="'library__search-input'"
+            placeholder="Search items"
+          />
+          <button
+            type="submit"
+            [ngClass]="'library__search-submit'"
+            (click)="onFiltersChange($event)"
+            #el
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div [ngClass]="'library__display'">
+        <h2 [ngClass]="'library__title'">Games</h2>
+        <div [ngClass]="'library__block'">
+          <ul [ngClass]="'library__list'" *ngIf="gamesModeOn; else elsBlock">
+            <li
+              [ngClass]="'library__item'"
+              *ngFor="let el of (item$ | async)?.filteredItems"
+            >
+              <div [ngClass]="'library__item-top'">
+                <h3 [ngClass]="'library__item-title'">{{ el.name }}</h3>
+              </div>
+              <div [ngClass]="'library__item-bottom'">
+                <p [ngClass]="'library__item-description'">
+                  {{ el.description }} Lorem ipsum dolor sit amet consectetur
+                  adipisicing.
+                </p>
+                <div
+                  [ngClass]="'library__buttons'"
+                  *ngIf="!gamesModeOn; else elseBlock"
+                >
+                  <button [ngClass]="'library__item-download'">Download</button>
+                  <button [ngClass]="'library__item-share'">Share</button>
+                </div>
+                <ng-template #elseBlock>
+                  <div [ngClass]="'library__button'">
+                    <button
+                      [ngClass]="'library__item-add-to-library'"
+                      id="{{ el._id }}"
+                      type="button"
+                      #element
+                      (click)="addGameToLibrary(element, $event)"
+                    >
+                      Add to Library
+                    </button>
+                  </div>
+                </ng-template>
+              </div>
+            </li>
+          </ul>
+          <ng-template #elsBlock>
+            <ul [ngClass]="'library__list'">
+              <li
+                [ngClass]="'library__item'"
+                *ngFor="let el of (item$ | async)?.games"
+              >
+                <div [ngClass]="'library__item-top'">
+                  <h3 [ngClass]="'library__item-title'">{{ el.name }}</h3>
+                </div>
+                <div [ngClass]="'library__item-bottom'">
+                  <p [ngClass]="'library__item-description'">
+                    {{ el.description }} Lorem ipsum dolor sit amet consectetur
+                    adipisicing.
+                  </p>
+                  <div [ngClass]="'library__buttons'">
+                    <button [ngClass]="'library__item-download'">
+                      Download
+                    </button>
+                    <button [ngClass]="'library__item-share'">Share</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ng-template>
+          <div
+            [ngClass]="'library__filter'"
+            [ngClass]="'library__search'"
+            *ngIf="gamesModeOn"
+          >
+            <h3 [ngClass]="'library__filter-header'">Filter by tag</h3>
+            <div [ngClass]="'library__filter-tags'">
+              <div [ngClass]="'library__filter-tag-item'">
+                <input
+                  type="checkbox"
+                  id="Indie"
+                  [ngClass]="'library__filter-tag-item-input'"
+                  value="indie"
+                  formControlName="Indie"
+                  (change)="onFiltersChange($event)"
+                />
+                <label for="Indie" [ngClass]="'library__filter-tag-item-label'"
+                  >Indie</label
+                >
+              </div>
+              <div [ngClass]="'library__filter-tag-item'">
+                <input
+                  type="checkbox"
+                  id="Adventurous"
+                  [ngClass]="'library__filter-tag-item-input'"
+                  value="adventurous"
+                  formControlName="Adventure"
+                  (change)="onFiltersChange($event)"
+                />
+                <label
+                  for="Adventurous"
+                  [ngClass]="'library__filter-tag-item-label'"
+                  >Adventurous</label
+                >
+              </div>
+              <div [ngClass]="'library__filter-tag-item'">
+                <input
+                  type="checkbox"
+                  id="Action"
+                  [ngClass]="'library__filter-tag-item-input'"
+                  value="Action"
+                  formControlName="Action"
+                  (change)="onFiltersChange($event)"
+                />
+                <label for="Action" [ngClass]="'library__filter-tag-item-label'"
+                  >Action</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
